@@ -49,6 +49,19 @@ public class Paralelo {
         this.ayudante = ayudante;
     }
     
+    public void anadirEstudiante(Estudiante e) {
+        estudiantes.add(e);
+    }
+    
+    public void eliminarEstudiante(Estudiante e){
+        for(Estudiante est: estudiantes){
+            if(est.equals(e)){
+                estudiantes.remove(e);
+            }
+        }
+    }
+    
+    
     //Imprime el listado de estudiantes registrados
     public void mostrarListado(){
         //No es necesario implementar
