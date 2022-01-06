@@ -9,9 +9,10 @@ public class Profesor {
     protected  int edad;
     protected  String direccion;
     protected  String telefono;
-    protected  InformacionAdicionalProfesor info;
     protected  ArrayList<Paralelo> paralelos;
-    
+    protected  int añosdeTrabajo;
+    protected  String facultad;
+    protected  double BonoFijo;
     
     
     public String getCodigo() {
@@ -62,21 +63,36 @@ public class Profesor {
         this.telefono = telefono;
     }
 
-    public InformacionAdicionalProfesor getInfo() {
-        return info;
-    }
-
-    public void setInfo(InformacionAdicionalProfesor info) {
-        this.info = info;
-    }
-
     public ArrayList<Paralelo> getParalelos() {
         return paralelos;
     }
 
-    //getters and setters
     public void setParalelos(ArrayList<Paralelo> paralelos) {
         this.paralelos = paralelos;
+    }
+
+    public int getAñosdeTrabajo() {
+        return añosdeTrabajo;
+    }
+
+    public void setAñosdeTrabajo(int añosdeTrabajo) {
+        this.añosdeTrabajo = añosdeTrabajo;
+    }
+
+    public String getFacultad() {
+        return facultad;
+    }
+
+    public void setFacultad(String facultad) {
+        this.facultad = facultad;
+    }
+
+    public double getBonoFijo() {
+        return BonoFijo;
+    }
+
+    public void setBonoFijo(double BonoFijo) {
+        this.BonoFijo = BonoFijo;
     }
 
     public Profesor(String codigo, String nombre, String apellido, String facultad, int edad, String direccion, String telefono) {
@@ -93,5 +109,9 @@ public class Profesor {
         paralelos.add(p);
     }
     
-    
+    public double calcularSueldo(){
+        double sueldo=0;
+        sueldo= añosdeTrabajo*600 + BonoFijo;
+        return sueldo;
+    }   
 }
