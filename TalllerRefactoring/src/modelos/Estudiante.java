@@ -2,19 +2,23 @@ package modelos;
 
 import java.util.ArrayList;
 
-public class Estudiante{
+public class Estudiante extends Persona {
     //Informacion del estudiante
     protected String matricula;
-    protected  String nombre;
-    protected  String apellido;
-    protected  String facultad;
-    protected  int edad;
-    protected  String direccion;
-    protected String telefono;
     protected  ArrayList<Paralelo> paralelos;
+
+    public Estudiante(String nombre, String apellido, String facultad, int edad, String direccion, String telefono) {
+        super(nombre, apellido, facultad, edad, direccion, telefono);
+    }
+    
+        public Estudiante(String nombre, String apellido, String facultad, int edad, String direccion, String telefono, String matricula, ArrayList<Paralelo> p) {
+        super(nombre, apellido, facultad, edad, direccion, telefono);
+        this.matricula = matricula;
+        this.paralelos = p;
+    }
     
     //Getter y setter de Matricula
-
+    
     public String getMatricula() {
         return matricula;
     }
@@ -24,60 +28,53 @@ public class Estudiante{
     }
 
     //Getter y setter del Nombre
-    public String getNombre() {
-        return nombre;
+      public String getNombre() {
+        return super.getNombre();
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        super.setNombre(nombre);
     }
-    
-    //Getter y setter del Apellido
+
     public String getApellido() {
-        return apellido;
+        return super.getApellido();
     }
 
     public void setApellido(String apellido) {
-        this.apellido = apellido;
+        super.setApellido(apellido);
     }
-    
-    //Getter y setter de la Facultad
+
     public String getFacultad() {
-        return facultad;
+        return super.getFacultad();
     }
 
     public void setFacultad(String facultad) {
-        this.facultad = facultad;
+        super.setFacultad(facultad);
     }
-    
-    //Getter y setter de la edad
+
     public int getEdad() {
-        return edad;
+        return super.getEdad();
     }
 
     public void setEdad(int edad) {
-        this.edad = edad;
+        super.setEdad(edad);
     }
-    
-    //Getter y setter de la direccion
+
     public String getDireccion() {
-        return direccion;
+        return super.getDireccion();
     }
 
     public void setDireccion(String direccion) {
-        this.direccion = direccion;
+        super.setDireccion(direccion);
     }
-    
-    //Getter y setter del telefono
 
     public String getTelefono() {
-        return telefono;
+        return super.getTelefono();
     }
 
     public void setTelefono(String telefono) {
-        this.telefono = telefono;
+        super.setTelefono(telefono);
     }
-    
     //Calcula y devuelve la nota inicial contando examen, deberes, lecciones y talleres. El teorico y el practico se calcula por parcial.
     public double CalcularNota(Paralelo p, double nexamen,double ndeberes, double nlecciones, double ntalleres){
         double nota=0;

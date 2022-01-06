@@ -2,17 +2,24 @@ package modelos;
 
 import java.util.ArrayList;
 
-public class Profesor {
+public class Profesor extends Persona {
     protected  String codigo;
-    protected  String nombre;
-    protected  String apellido;
-    protected  int edad;
-    protected  String direccion;
-    protected  String telefono;
     protected  ArrayList<Paralelo> paralelos;
     protected  int añosdeTrabajo;
-    protected  String facultad;
     protected  double BonoFijo;
+
+    public Profesor(String nombre, String apellido, String facultad, int edad, String direccion, String telefono) {
+        super(nombre, apellido, facultad, edad, direccion, telefono);
+    }
+    
+        public Profesor(String nombre, String apellido, String facultad, int edad, String direccion, String telefono, String codigo, ArrayList<Paralelo> p, int anioTrabajo, double bonoFijo) {
+        super(nombre, apellido, facultad, edad, direccion, telefono);
+        this.codigo = codigo;
+        this.paralelos = p;
+        this.añosdeTrabajo = anioTrabajo;
+        this.BonoFijo = bonoFijo;
+    }
+    
     
     
     public String getCodigo() {
@@ -23,44 +30,52 @@ public class Profesor {
         this.codigo = codigo;
     }
 
-    public String getNombre() {
-        return nombre;
+      public String getNombre() {
+        return super.getNombre();
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        super.setNombre(nombre);
     }
 
     public String getApellido() {
-        return apellido;
+        return super.getApellido();
     }
 
     public void setApellido(String apellido) {
-        this.apellido = apellido;
+        super.setApellido(apellido);
+    }
+
+    public String getFacultad() {
+        return super.getFacultad();
+    }
+
+    public void setFacultad(String facultad) {
+        super.setFacultad(facultad);
     }
 
     public int getEdad() {
-        return edad;
+        return super.getEdad();
     }
 
     public void setEdad(int edad) {
-        this.edad = edad;
+        super.setEdad(edad);
     }
 
     public String getDireccion() {
-        return direccion;
+        return super.getDireccion();
     }
 
     public void setDireccion(String direccion) {
-        this.direccion = direccion;
+        super.setDireccion(direccion);
     }
 
     public String getTelefono() {
-        return telefono;
+        return super.getTelefono();
     }
 
     public void setTelefono(String telefono) {
-        this.telefono = telefono;
+        super.setTelefono(telefono);
     }
 
     public ArrayList<Paralelo> getParalelos() {
@@ -79,13 +94,6 @@ public class Profesor {
         this.añosdeTrabajo = añosdeTrabajo;
     }
 
-    public String getFacultad() {
-        return facultad;
-    }
-
-    public void setFacultad(String facultad) {
-        this.facultad = facultad;
-    }
 
     public double getBonoFijo() {
         return BonoFijo;
@@ -95,20 +103,12 @@ public class Profesor {
         this.BonoFijo = BonoFijo;
     }
 
-    public Profesor(String codigo, String nombre, String apellido, String facultad, int edad, String direccion, String telefono) {
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.edad = edad;
-        this.direccion = direccion;
-        this.telefono = telefono;
-        paralelos= new ArrayList<>();
-    }
+
     
     public void anadirParalelos(Paralelo p){
         paralelos.add(p);
     }
-    
+        
     public double calcularSueldo(){
         double sueldo=0;
         sueldo= añosdeTrabajo*600 + BonoFijo;

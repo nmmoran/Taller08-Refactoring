@@ -6,9 +6,15 @@ public class Ayudante extends Estudiante{
 
     protected  ArrayList<Paralelo> paralelos;
 
-    public Ayudante(ArrayList<Paralelo> paralelos) {
-        this.paralelos = paralelos;
+    public Ayudante(String nombre, String apellido, String facultad, int edad, String direccion, String telefono) {
+        super(nombre, apellido, facultad, edad, direccion, telefono);
     }
+    
+    public Ayudante(String nombre, String apellido, String facultad, int edad, String direccion, String telefono,ArrayList<Paralelo> p) {
+        super(nombre, apellido, facultad, edad, direccion, telefono);
+        this.paralelos = p;
+    }
+    
     
 //getters and setters
     public String getMatricula() {
@@ -20,51 +26,51 @@ public class Ayudante extends Estudiante{
     }
 
     public String getNombre() {
-        return nombre;
+        return super.getNombre();
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        super.setNombre(nombre);
     }
 
     public String getApellido() {
-        return apellido;
+        return super.getApellido();
     }
 
     public void setApellido(String apellido) {
-        this.apellido = apellido;
+        super.setApellido(apellido);
     }
 
     public String getFacultad() {
-        return facultad;
+        return super.getFacultad();
     }
 
     public void setFacultad(String facultad) {
-        this.facultad = facultad;
+        super.setFacultad(facultad);
     }
 
     public int getEdad() {
-        return edad;
+        return super.getEdad();
     }
 
     public void setEdad(int edad) {
-        this.edad = edad;
+        super.setEdad(edad);
     }
 
     public String getDireccion() {
-        return direccion;
+        return super.getDireccion();
     }
 
     public void setDireccion(String direccion) {
-        this.direccion = direccion;
+        super.setDireccion(direccion);
     }
 
     public String getTelefono() {
-        return telefono;
+        return super.getTelefono();
     }
 
     public void setTelefono(String telefono) {
-        this.telefono = telefono;
+        super.setTelefono(telefono);
     }
 
  
@@ -77,9 +83,6 @@ public class Ayudante extends Estudiante{
         this.paralelos = paralelos;
     }
     
-
-    //Los paralelos se añaden/eliminan directamente del Arraylist de paralelos
-
 
     //Método para imprimir los paralelos que tiene asignados como ayudante
     public void MostrarParalelos(){
