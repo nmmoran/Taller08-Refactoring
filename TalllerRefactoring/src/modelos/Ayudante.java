@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Ayudante {
     protected Estudiante est;
-    public ArrayList<Paralelo> paralelos;
+    protected  ArrayList<Paralelo> paralelos;
 
     Ayudante(Estudiante e){
     	est = e;
@@ -25,6 +25,15 @@ public class Ayudante {
     public String getApellido() {
         return est.getApellido();
     }
+
+    public ArrayList<Paralelo> getParalelos() {
+        return paralelos;
+    }
+
+    public void setParalelos(ArrayList<Paralelo> paralelos) {
+        this.paralelos = paralelos;
+    }
+    
 
     //Los paralelos se añaden/eliminan directamente del Arraylist de paralelos
 

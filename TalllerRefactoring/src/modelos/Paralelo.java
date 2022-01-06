@@ -3,11 +3,11 @@ package modelos;
 import java.util.ArrayList;
 
 public class Paralelo {
-    public int numero;
-    public Materia materia;
-    public Profesor profesor;
-    public ArrayList<Estudiante> estudiantes;
-    public Ayudante ayudante;
+    protected  int numero;
+    protected  Materia materia;
+    protected  Profesor profesor;
+    protected  ArrayList<Estudiante> estudiantes;
+    protected  Ayudante ayudante;
 
     public int getNumero() {
         return numero;
@@ -31,6 +31,22 @@ public class Paralelo {
 
     public void setProfesor(Profesor profesor) {
         this.profesor = profesor;
+    }
+
+    public ArrayList<Estudiante> getEstudiantes() {
+        return estudiantes;
+    }
+
+    public void setEstudiantes(ArrayList<Estudiante> estudiantes) {
+        this.estudiantes = estudiantes;
+    }
+
+    public Ayudante getAyudante() {
+        return ayudante;
+    }
+
+    public void setAyudante(Ayudante ayudante) {
+        this.ayudante = ayudante;
     }
     
     //Imprime el listado de estudiantes registrados
